@@ -5,13 +5,13 @@ var viewModule = require("ui/core/view");
 var gestures = require("ui/gestures");
 var absoluteLayout = require("ui/layouts/absolute-layout");
 
-viewModel.set("leftItems", [1, 2, 3, 4, 5 ]);
-viewModel.set("rightItems", ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]);
+viewModel.set("leftItems", ["1", "2", "e", "4", "f" ]);
+viewModel.set("rightItems", ["a", "3", "b", "c", "d", "5", "g", "h", "i", "j"]);
 
 exports.pageLoaded = function(args) {
     var page = args.object;
-    viewModel.get("leftItems").push(6);
-    viewModel.get("rightItems").push("k");
+    viewModel.get("leftItems").push("k");
+    viewModel.get("rightItems").push("6");
     page.bindingContext = viewModel;
 
     var dragLabel = viewModule.getViewById(page, "dragLabel");
