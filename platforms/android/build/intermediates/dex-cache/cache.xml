@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/stef/Dev/MyApps/Templates/dragdrop-listviews/platforms/android/libs/nativescript.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
+        <dex dex="/home/stef/Dev/MyApps/Templates/dragdrop-listviews/platforms/android/build/intermediates/pre-dexed/debug/nativescript-e285bf61df2eba3ed69b0cd6ad0dcd7b7ede589f.jar" />
+    </item>
+    <item
+        jar="/home/stef/Dev/MyApps/Templates/dragdrop-listviews/platforms/android/libs/widgets.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="/home/stef/Dev/MyApps/Templates/dragdrop-listviews/platforms/android/build/intermediates/pre-dexed/debug/widgets-2a0f79cfe08693e86ddf744b4b4c09eea68838d7.jar" />
+    </item>
+    <item
+        jar="/home/stef/Dev/android-sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/home/stef/Dev/MyApps/Templates/dragdrop-listviews/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-99e368409616659fc1f3cd4cb1d13be8e2e9dd2b.jar" />
+    </item>
+
+</items>
