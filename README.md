@@ -24,6 +24,8 @@ To be done :
 - dragLabel should take the text of the listview item to be moved
 - when pan gesture stop on a item in second listview, item in listview one should be deleted, and same item should be added on the target listview
 
+If the Pan Gesture is ot the good item to achieve the drag n drop between listview, felle free to try something else
+
 # License
 This is released under the MIT License, meaning you are free to include this in any type of program
 
