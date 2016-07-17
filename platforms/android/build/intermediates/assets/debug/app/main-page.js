@@ -1,52 +1,37 @@
-/*
-var vmModule = require("./main-view-model");
-function pageLoaded(args) {
-    var page = args.object;
-    page.bindingContext = vmModule.mainViewModel;
-}
-exports.pageLoaded = pageLoaded;
-*/
-
-var observable = require("data/observable");
+var observableArray = require("data/observable-array");
 var pageModule = require("ui/page");
-var viewModel = new observable.Observable();
+var viewModel = new observableArray.ObservableArray();
+var viewModule = require("ui/core/view");
+var gestures = require("ui/gestures");
+var absoluteLayout = require("ui/layouts/absolute-layout");
 
-console.log("ok");
+viewModel.set("leftItems", ["1", "2", "e", "4", "f" ]);
+viewModel.set("rightItems", ["a", "3", "b", "c", "d", "5", "g", "h", "i", "j"]);
 
 exports.pageLoaded = function(args) {
     var page = args.object;
-    viewModel.set("items", [1, 2, 3]);
+    viewModel.get("leftItems").push("k");
+    viewModel.get("rightItems").push("6");
     page.bindingContext = viewModel;
+
+    var dragLabel = viewModule.getViewById(page, "dragLabel");
+    absoluteLayout.AbsoluteLayout.setLeft(dragLabel,50);
+    absoluteLayout.AbsoluteLayout.setTop(dragLabel,50);
 };
 
-/*
-var observable = require("data/observable");
-var pageModule = require("ui/page");
-var listView = new listViewModule.ListView();
-var planets = new observableArray.ObservableArray(["venus", "earth", "jupiter"]);
+exports.dragit = function(args) {
+  var view = args.view;
+  var dragLabel = viewModule.getViewById(view.page, "dragLabel");
+  dragLabel.visibility ="visible";
+  dragLabel.text= "moving";
 
-listView.items = planets;
-console.log("on passe");
+  var X = args.deltaX;
+  var Y = args.deltaY;
+  var left = absoluteLayout.AbsoluteLayout.getLeft(view);
+  var top = absoluteLayout.AbsoluteLayout.getTop(view);
+  absoluteLayout.AbsoluteLayout.setLeft(dragLabel,left+X);
+  absoluteLayout.AbsoluteLayout.setTop(dragLabel,top+Y);
 
-exports.loaded = function(args) {
-    page = args.object;
-    planets.set =
-
-    page.bindingContext = pageData;
-    view = page.getViewById("L9");
-
-    treesList.empty();
-
-    treesList.load().then(function() {
-
-    });
+  console.log("dragit" + X + " " + Y);
+  console.log("coord [" + top + " - " + top + "]");
 };
-
-listView.on(listViewModule.ListView.itemLoadingEvent, function (args) {
-    if (!args.view) {
-        // Create label if it is not already created.
-        args.view = new labelModule.Label();
-    }
-    args.view.text = planets.getItem(args.index);
-    indexes[args.index] = true;
-});

@@ -5,13 +5,13 @@ var viewModule = require("ui/core/view");
 var gestures = require("ui/gestures");
 var absoluteLayout = require("ui/layouts/absolute-layout");
 
-viewModel.set("leftItems", [1, 2, 3, 4, 5 ]);
-viewModel.set("rightItems", ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]);
+viewModel.set("leftItems", ["1", "2", "e", "4", "f" ]);
+viewModel.set("rightItems", ["a", "3", "b", "c", "d", "5", "g", "h", "i", "j"]);
 
 exports.pageLoaded = function(args) {
     var page = args.object;
-    viewModel.get("leftItems").push(6);
-    viewModel.get("rightItems").push("k");
+    viewModel.get("leftItems").push("k");
+    viewModel.get("rightItems").push("6");
     page.bindingContext = viewModel;
 
     var dragLabel = viewModule.getViewById(page, "dragLabel");
@@ -34,42 +34,4 @@ exports.dragit = function(args) {
 
   console.log("dragit" + X + " " + Y);
   console.log("coord [" + top + " - " + top + "]");
-/*
-        absoluteLayout.AbsoluteLayout.setTop(this, deltaY);
-        absoluteLayout.AbsoluteLayout.setLeft(this, deltaX);
-  */
 };
-
-
-/*
-var observable = require("data/observable");
-var pageModule = require("ui/page");
-var listView = new listViewModule.ListView();
-var planets = new observableArray.ObservableArray(["venus", "earth", "jupiter"]);
-
-listView.items = planets;
-console.log("on passe");
-
-exports.loaded = function(args) {
-    page = args.object;
-    planets.set =
-
-    page.bindingContext = pageData;
-    view = page.getViewById("L9");
-
-    treesList.empty();
-
-    treesList.load().then(function() {
-
-    });
-};
-
-listView.on(listViewModule.ListView.itemLoadingEvent, function (args) {
-    if (!args.view) {
-        // Create label if it is not already created.
-        args.view = new labelModule.Label();
-    }
-    args.view.text = planets.getItem(args.index);
-    indexes[args.index] = true;
-});
-*/
