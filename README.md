@@ -26,10 +26,15 @@ To be done :
 
 If the Pan Gesture is ot the good item to achieve the drag n drop between listview, felle free to try something else
 
+update =>
+  A new branch is added "radlistview", using telerik UI radlistview feature to reorder inside each listview
+  ...waiting a solution to drag an item outside the listview, on top for example
+  ... and to drag an item from one list to the another
+
+
 # License
 This is released under the MIT License, meaning you are free to include this in any type of program
 
 # pre-requisite
 please install the nativescript-telerik-ui package by typing the following command: tns plugin add nativescript-telerik-ui
-
 
