@@ -1,11 +1,12 @@
 {
-	"nativescript": {
-		"id": "org.nativescript.dragdroplistviews",
-		"tns-android": {
-			"version": "1.5.1"
-		}
-	},
-	"dependencies": {
-		"tns-core-modules": "1.5.1"
-	}
+  "nativescript": {
+    "id": "org.nativescript.dragdroplistviews",
+    "tns-android": {
+      "version": "1.5.1"
+    }
+  },
+  "dependencies": {
+    "nativescript-telerik-ui": "^1.2.0",
+    "tns-core-modules": "1.5.1"
+  }
 }

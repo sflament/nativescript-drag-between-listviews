@@ -1,17 +1,50 @@
-<Page loaded="pageLoaded">
+<Page loaded="pageLoaded" xmlns="http://www.nativescript.org/tns.xsd" xmlns:lv="nativescript-telerik-ui/listview">
   <GridLayout id="3blocks">
     <GridLayout  columns="*,*" rows="*,*,*" id="itemLR">
-      <Label text="Label BEFORE" row="0" col="0" colSpan="2" backgroundColor="lightblue" />
+      <Label text="DROP here to delete" row="0" col="0" colSpan="2" backgroundColor="lightblue" />
         <GridLayout row="1" col="0" backgroundColor="green" id="Litems">
-            <ListView items="{{ leftItems }}" pan="dragit" id="Litem" />
+          <lv:RadListView  itemReordered="onItemReordered" itemReorderStarted="onItemReorderStart"
+            items="{{ leftItems }}" 
+            id="Litem" 
+            selectionBehavior="None"
+            itemReorder="true"
+            reorderMode="HoldAndDrag"
+            >
+
+              <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+              </lv:RadListView.listViewLayout>
+
+              <lv:RadListView.itemTemplate>
+                <StackLayout orientation="horizontal" horizontalAlignment="center">
+                  <Label text="{{ value }}"/>
+                </StackLayout>
+              </lv:RadListView.itemTemplate>
+
+          </lv:RadListView>
         </GridLayout>
         <GridLayout row="1" col="1" backgroundColor="yellow">
-            <ListView items="{{ rightItems }}" />
+          <lv:RadListView  
+            items="{{ rightItems }}" 
+            id="Ritem" 
+            selectionBehavior="None"
+            itemReorder="true"
+            reorderMode="HoldAndDrag"
+            >
+
+              <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+              </lv:RadListView.listViewLayout>
+
+              <lv:RadListView.itemTemplate>
+                <StackLayout orientation="horizontal" horizontalAlignment="center">
+                  <Label text="{{ value }}"/>
+                </StackLayout>
+              </lv:RadListView.itemTemplate>
+
+          </lv:RadListView>
         </GridLayout>
-        <Label text="Label END" row="2" col="0" colSpan="2" backgroundColor="lightblue"/>
+        <Label text="DROP here to modify" row="2" col="0" colSpan="2" backgroundColor="lightblue"/>
         </GridLayout>
-        <AbsoluteLayout>
-          <Label left="100" top="300"  text="drag me" id="dragLabel" backgroundColor="pink" visibility="collapsed"/>
-        </AbsoluteLayout>
     </GridLayout>
 </Page>
